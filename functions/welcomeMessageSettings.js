@@ -11,15 +11,20 @@ module.exports = async function (interaction) {
         const filePath = path.join(currentDirectory, jsonPath);
     
         const jsonContent = require(filePath);
+
+        var text = "";
     
         if (interaction.options.get('aktivieren')) {
             jsonContent.aktivieren = interaction.options.get('aktivieren');
+            text = text + " aktivieren: " + jsonContent.aktivieren.value
         }
         if (interaction.options.get('channel')) {
             jsonContent.channel = interaction.options.get('channel');
+            text = text + " channel: " + jsonContent.channel.value
         }
         if (interaction.options.get('url')) {
             jsonContent.url = interaction.options.get('url')
+            text = text + " channel: " + jsonContent.aktivieren.value
         }
     
         const jsonString = JSON.stringify(jsonContent, null, 2);
