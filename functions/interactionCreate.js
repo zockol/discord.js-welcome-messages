@@ -1,5 +1,5 @@
 
-const guildMemberEmitFunction = require("./guildMemberEmitFunction");
+const emitFunction = require("./emitFunction");
 const welcomeMessageSettings = require("./welcomeMessageSettings");
 
 module.exports = async function (interaction, client) {
@@ -10,6 +10,6 @@ module.exports = async function (interaction, client) {
 	if (commandName === "welcomemessage") {
 		welcomeMessageSettings(interaction)
 	} else if (commandName === "emit") {
-		guildMemberEmitFunction(interaction, client)
+		emitFunction(interaction, client)
 	}
 };
