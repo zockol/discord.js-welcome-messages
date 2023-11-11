@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "axios": "^1.6.1",
+    "canvas": "^2.11.2",
     "discord.js": "^14.13.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "webp-converter": "^2.3.3"
   }
 }
