@@ -16,15 +16,15 @@ module.exports = async function (interaction) {
     
         if (interaction.options.get('aktivieren')) {
             jsonContent.aktivieren = interaction.options.get('aktivieren');
-            text = text + " aktivieren: " + jsonContent.aktivieren.value
+            text = text + " **aktivieren:** " + jsonContent.aktivieren.value
         }
         if (interaction.options.get('channel')) {
             jsonContent.channel = interaction.options.get('channel');
-            text = text + " channel: " + jsonContent.channel.value
+            text = text + " **channel:** " + jsonContent.channel.value
         }
         if (interaction.options.get('url')) {
             jsonContent.url = interaction.options.get('url')
-            text = text + " channel: " + jsonContent.aktivieren.value
+            text = text + " **url:** " + jsonContent.url.value
         }
     
         const jsonString = JSON.stringify(jsonContent, null, 2);
@@ -34,6 +34,7 @@ module.exports = async function (interaction) {
               console.error('Fehler beim Schreiben der Datei:', err);
             } else {
               console.log('Die JSON-Datei wurde erfolgreich aktualisiert.');
+              interaction.reply({ content: text, ephemeral: true })
             }
           });
     }
